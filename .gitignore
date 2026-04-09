@@ -1,0 +1,12 @@
+# Entorno virtual
+venv/
+
+# Credenciales - NUNCA subir esto
+config.py
+
+# Archivos temporales de Python
+_pycache_/
+*.pyc
+
+# VS Code
+.vscode/
