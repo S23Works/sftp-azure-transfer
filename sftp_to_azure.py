@@ -25,8 +25,8 @@ def download_from_sftp():
     transport.connect(username=SFTP_USER, password=SFTP_PASSWORD)
 
     sftp = paramiko.SFTPClient.from_transport(transport)
-    local_file = "archivo.txt"
-    sftp.get(SFTP_FOLDER, local_file)
+    local_file = "C:\Documents"
+    sftp.get(f"{SFTP_FOLDER}/{BLOB_NAME}", local_file)
 
     sftp.close()
     transport.close()
@@ -40,7 +40,7 @@ def upload_to_azure(file_path):
     )
 
     blob_client = blob_service_client.get_blob_client(
-        container=CONTAINER_NAME,
+        container=AZURE_CONTAINER,
         blob=BLOB_NAME
     )
 
